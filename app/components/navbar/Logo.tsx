@@ -10,7 +10,7 @@ const Logo = () => {
       <Image
         src="/images/airbnb-logo.png"
         alt="Airbnb Logo"
-        className="hidden md:block cursor-pointer"
+        className="hidden cursor-pointer md:block"
         width={100}
         height={100}
       />

@@ -1,9 +1,6 @@
-"use client";
-
-import Button from "./components/button/button";
+import Image from "next/image";
+import Navbar from "./components/navbar/Navbar";
 
 export default function Home() {
-  return (
-    <div className="text-rose-500 text-2xl">{/* <Button>TEST</Button> */}</div>
-  );
+  return <main></main>;
 }
