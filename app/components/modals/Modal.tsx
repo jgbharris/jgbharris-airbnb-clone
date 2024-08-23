@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import Button from "../Button";
 
 interface ModalProps {
   isOpen?: boolean;
@@ -12,7 +14,7 @@ interface ModalProps {
   actionLabel: string;
   disabled?: boolean;
   secondaryAction?: () => void;
-  secondaryLabel?: string;
+  secondaryActionLabel?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -25,7 +27,7 @@ const Modal: React.FC<ModalProps> = ({
   actionLabel,
   disabled,
   secondaryAction,
-  secondaryLabel,
+  secondaryActionLabel,
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
   const animationDuration = 300;
@@ -34,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({
     setShowModal(isOpen);
   }, [isOpen]);
 
-  const handleOnClose = useCallback(() => {
+  const handleClose = useCallback(() => {
     if (disabled) return;
     setShowModal(false);
     setTimeout(() => {
@@ -65,9 +67,34 @@ const Modal: React.FC<ModalProps> = ({
             <div className="translate relative flex h-full w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none md:h-auto lg:h-auto">
               {/* Header */}
               <div className="relative flex items-center justify-center rounded-t border-b-[1px] p-6">
-                <button className="absolute left-9 border-0 p-1 transition hover:opacity-70">
-                  Close
+                <button
+                  onClick={handleClose}
+                  className="absolute left-9 border-0 p-1 transition hover:opacity-70"
+                >
+                  <IoMdClose size={18} />
                 </button>
+                <div className="text-lg font-semibold">{title}</div>
+              </div>
+              {/* Body */}
+              <div className="relative flex-auto p-6">{body}</div>
+              {/* Footer */}
+              <div className="flex flex-col gap-2 p-6">
+                <div className="flex w-full flex-row items-center gap-4">
+                  {secondaryAction && secondaryActionLabel && (
+                    <Button
+                      outline
+                      disabled={disabled}
+                      label={secondaryActionLabel}
+                      onClick={handleSecondaryAction}
+                    />
+                  )}
+
+                  <Button
+                    disabled={disabled}
+                    label={actionLabel}
+                    onClick={handleSubmit}
+                  />
+                </div>
               </div>
             </div>
           </div>
