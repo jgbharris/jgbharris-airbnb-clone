@@ -41,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({
     setShowModal(false);
     setTimeout(() => {
       onClose();
-    }, 300); // Animations require timeout
+    }, animationDuration); // Animations require timeout
   }, [disabled, onClose]);
 
   const handleSubmit = useCallback(() => {
@@ -62,7 +62,7 @@ const Modal: React.FC<ModalProps> = ({
         <div className="relative mx-auto my-6 h-full w-full md:h-auto md:w-4/6 lg:h-auto lg:w-3/6 xl:w-2/5">
           {/* Modal content */}
           <div
-            className={`translate duration-300 ${showModal ? "translate-y-0" : "translate-y-full"} ${showModal ? "opacity-100" : "opacity-0"} `}
+            className={`translate duration-${animationDuration} ${showModal ? "translate-y-0" : "translate-y-full"} ${showModal ? "opacity-100" : "opacity-0"} `}
           >
             <div className="translate relative flex h-full w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none md:h-auto lg:h-auto">
               {/* Header */}
