@@ -4,6 +4,7 @@ import axios from "axios";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
+import { signIn } from "next-auth/react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import { MdEmail } from "react-icons/md";
@@ -93,7 +94,7 @@ const RegisterModal = () => {
         outline
         icon={AiFillGithub}
         onClick={() => {
-          console.log("Github");
+          signIn("github");
         }}
       />
       <div className="mt-4 justify-center text-center font-light text-neutral-500">
