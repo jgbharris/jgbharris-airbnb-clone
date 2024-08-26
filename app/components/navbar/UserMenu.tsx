@@ -5,8 +5,15 @@ import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
+import { User } from "@prisma/client";
 
-const UserMenu = () => {
+interface UserMenuProps {
+  currentUser?: User | null;
+}
+
+const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+  const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +46,7 @@ const UserMenu = () => {
         <div className="absolute right-0 top-12 w-[40vw] overflow-hidden rounded-xl bg-white text-sm shadow-md md:w-3/4">
           <div className="flex cursor-pointer flex-col">
             <>
-              <MenuItem onClick={() => {}} label={"Login"} />
+              <MenuItem onClick={loginModal.onOpen} label={"Login"} />
               <MenuItem onClick={registerModal.onOpen} label={"Sign up"} />
             </>
           </div>
