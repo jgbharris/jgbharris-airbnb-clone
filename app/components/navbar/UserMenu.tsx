@@ -8,6 +8,7 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
+import { IoMdClose } from "react-icons/io";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -45,6 +46,15 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       </div>
       {isOpen && (
         <div className="absolute right-0 top-20 w-[40vw] overflow-hidden rounded-xl bg-white text-sm shadow-md md:w-3/4">
+          <div className="mb-5">
+            <button
+              onClick={toggleOpen}
+              className="absolute right-0 border-0 p-1 transition hover:opacity-70"
+            >
+              <IoMdClose size={18} />
+            </button>
+          </div>
+
           <div className="flex cursor-pointer flex-col">
             {currentUser ? (
               <>

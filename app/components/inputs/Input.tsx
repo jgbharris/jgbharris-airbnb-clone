@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { UseFormRegister, FieldValues, FieldErrors } from "react-hook-form";
 import { BiDollar } from "react-icons/bi";

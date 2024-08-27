@@ -1,3 +1,5 @@
+"use client";
+
 import Container from "@/app/components/Container";
 import {
   GiBarn,
@@ -13,7 +15,7 @@ import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import { MdOutlineVilla } from "react-icons/md";
 import CategoryBox from "./CategoryBox";
 import { usePathname, useSearchParams } from "next/navigation";
-import { FaSkiing, FaSkiingNordic } from "react-icons/fa";
+import { FaSkiing } from "react-icons/fa";
 import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 
