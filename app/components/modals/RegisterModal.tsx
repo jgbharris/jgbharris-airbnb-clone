@@ -86,7 +86,7 @@ const RegisterModal = () => {
         outline
         icon={FcGoogle}
         onClick={() => {
-          console.log("Google");
+          signIn("google");
         }}
       />
       <Button

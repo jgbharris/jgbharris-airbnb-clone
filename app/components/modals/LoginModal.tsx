@@ -81,7 +81,7 @@ const LoginModal = () => {
         outline
         icon={FcGoogle}
         onClick={() => {
-          console.log("Google");
+          signIn("google");
         }}
       />
       <Button
@@ -89,7 +89,7 @@ const LoginModal = () => {
         outline
         icon={AiFillGithub}
         onClick={() => {
-          console.log("Github");
+          signIn("github");
         }}
       />
       <div className="mt-4 justify-center text-center font-light text-neutral-500">
