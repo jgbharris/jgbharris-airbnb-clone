@@ -8,6 +8,7 @@ import CategoryInput from "../inputs/CategoryInput";
 import { FieldValue, FieldValues, useForm } from "react-hook-form";
 import { title } from "process";
 import CountrySelect from "../inputs/CountrySelect";
+import Map from "../Map";
 
 const RentModal = () => {
   enum STEPS {
@@ -43,6 +44,11 @@ const RentModal = () => {
   });
 
   const category = watch("category");
+  const location = watch("location");
+  const guestCount = watch("guestCount");
+  const roomCount = watch("roomCount");
+  const bathroomCount = watch("bathroomCount");
+  const imageSrc = watch("imageSrc");
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -102,10 +108,12 @@ const RentModal = () => {
           subtitle="Help guests find your place"
         />
         <CountrySelect
+          value={location}
           onChange={(value) => {
             setCustomValue("location", value);
           }}
         />
+        <Map />
       </div>
     );
   }
