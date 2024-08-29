@@ -10,6 +10,7 @@ import { title } from "process";
 import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../inputs/Counter";
+import ImageUpload from "../inputs/ImageUpload";
 
 const RentModal = () => {
   enum STEPS {
@@ -159,6 +160,23 @@ const RentModal = () => {
           value={bathroomCount}
           onChange={(value) => {
             setCustomValue("bathroomCount", value);
+          }}
+        />
+      </div>
+    );
+  }
+
+  if (step === STEPS.IMAGES) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Add some images of your place"
+          subtitle="Show off your place"
+        />
+        <ImageUpload
+          value={imageSrc}
+          onChange={(value) => {
+            setCustomValue("imageSrc", value);
           }}
         />
       </div>
