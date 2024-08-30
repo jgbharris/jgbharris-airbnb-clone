@@ -13,7 +13,8 @@ const Logo = () => {
         className="hidden cursor-pointer md:block"
         width={100}
         height={100}
-        style={{ width: "100px", height: "auto" }}
+        priority
+        // style={{ width: "100px", height: "60px" }}
       />
     </div>
   );
