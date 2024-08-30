@@ -90,8 +90,7 @@ const RentModal = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     if (step !== STEPS.PRICE) {
-      return;
-      onNext();
+      return onNext();
     }
 
     setIsLoading(true);
