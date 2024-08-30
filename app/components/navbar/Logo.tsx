@@ -14,7 +14,6 @@ const Logo = () => {
         width={100}
         height={100}
         priority
-        // style={{ width: "100px", height: "60px" }}
       />
     </div>
   );
