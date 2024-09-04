@@ -105,7 +105,7 @@ const RentModal = () => {
         rentModal.onClose();
       })
       .catch(() => {
-        toast.error("An error occurred");
+        toast.error("An error occurred - check all info has been entered");
       })
       .finally(() => {
         setIsLoading(false);
@@ -231,6 +231,7 @@ const RentModal = () => {
           disabled={isLoading}
           register={register}
           errors={errors}
+          required
         />
         <hr />
         <Input
@@ -239,6 +240,7 @@ const RentModal = () => {
           disabled={isLoading}
           register={register}
           errors={errors}
+          required
         />
       </div>
     );

@@ -24,6 +24,7 @@ export async function POST(request: Request) {
 
   Object.keys(body).forEach((value: any) => {
     if (!body[value]) {
+      console.log("Missing value: ", value);
       return NextResponse.error();
     }
   });
