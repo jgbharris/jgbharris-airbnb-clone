@@ -1,5 +1,4 @@
 import prisma from "@/app/libs/prismadb";
-import { GrUpdate } from "react-icons/gr";
 
 interface IParams {
   listingId?: string;

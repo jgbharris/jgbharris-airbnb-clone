@@ -5,7 +5,6 @@ import { toast } from "react-hot-toast";
 
 import { SafeUser } from "../types";
 import useLoginModal from "./useLoginModal";
-import Router from "next/router";
 
 interface IUseFavorite {
   listingId: string;
