@@ -14,6 +14,7 @@ import { categories } from "@/app/components/navbar/Categories";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import toast from "react-hot-toast";
 import ListingReservation from "@/app/components/listings/ListingReservation";
+import { revalidatePath } from "next/cache";
 
 const initialDateRange = {
   startDate: new Date(),
@@ -72,14 +73,16 @@ const ListingClient: React.FC<ListingClientProps> = ({
       .then(() => {
         toast.success("Reservation created successfully");
         setDateRange(initialDateRange);
-        // Redirect to trips
-        router.push("/trips");
+        // Placeholder
       })
       .catch(() => {
         toast.error("Something went wrong");
       })
       .finally(() => {
         setIsLoading(false);
+        // Redirect to trips page
+        router.push("/trips");
+        router.refresh();
       });
   }, [totalPrice, dateRange, currentUser, listing?.id, loginModal, router]);
 
