@@ -2,14 +2,19 @@ import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
 import Container from "./components/Container";
 import EmptyState from "./components/navbar/EmptyState";
-import { getListings } from "./actions/getListings";
+import { getListings, IListingParams } from "./actions/getListings";
 import ListingCard from "./components/listings/ListingCard";
 import getCurrentUser from "./actions/getCurrentUser";
 import { Listing } from "@prisma/client";
 
-export default async function Home() {
-  const listings = await getListings();
+interface HomeProps {
+  searchParams: IListingParams;
+}
+
+const Home = async ({ searchParams }: HomeProps) => {
   const currentUser = await getCurrentUser();
+  const listings = await getListings(searchParams);
+
   if (listings.length === 0) {
     return (
       <EmptyState
@@ -34,4 +39,6 @@ export default async function Home() {
       </div>
     </Container>
   );
-}
+};
+
+export default Home;
