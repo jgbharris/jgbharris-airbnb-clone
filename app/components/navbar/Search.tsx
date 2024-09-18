@@ -1,3 +1,5 @@
+"use client";
+
 import useSearchModal from "@/app/hooks/useSearchModal";
 import { BiSearch } from "react-icons/bi";
 
