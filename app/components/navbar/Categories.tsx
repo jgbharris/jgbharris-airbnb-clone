@@ -12,7 +12,6 @@ import {
 } from "react-icons/gi";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import { MdOutlineVilla } from "react-icons/md";
-import { Suspense } from "react";
 import CategoryBox from "./CategoryBox";
 import Container from "@/app/components/Container";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -113,15 +112,13 @@ const Categories = () => {
       <div className="flex flex-row items-center justify-between overflow-x-auto pt-4">
         {categories.map((item) => {
           return (
-            <Suspense>
-              <CategoryBox
-                key={item.label}
-                icon={item.icon}
-                label={item.label}
-                description={item.description}
-                selected={category === item.label}
-              />
-            </Suspense>
+            <CategoryBox
+              key={item.label}
+              icon={item.icon}
+              label={item.label}
+              description={item.description}
+              selected={category === item.label}
+            />
           );
         })}
       </div>
