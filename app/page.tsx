@@ -1,11 +1,8 @@
-import Image from "next/image";
-import Navbar from "./components/navbar/Navbar";
 import Container from "./components/Container";
 import EmptyState from "./components/navbar/EmptyState";
-import { getListings, IListingParams } from "./actions/getListings";
 import ListingCard from "./components/listings/ListingCard";
+import { getListings, IListingParams } from "./actions/getListings";
 import getCurrentUser from "./actions/getCurrentUser";
-import { Listing } from "@prisma/client";
 
 interface HomeProps {
   searchParams: IListingParams;

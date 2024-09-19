@@ -1,7 +1,7 @@
 import EmptyState from "../components/navbar/EmptyState";
-import getCurrentUser from "../actions/getCurrentUser";
 import FavoritesClient from "./FavoritesClient";
 import getFavoriteListings from "../actions/getFavoriteListings";
+import getCurrentUser from "../actions/getCurrentUser";
 
 const FavoritesPage = async () => {
   const currentUser = await getCurrentUser();

@@ -1,11 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import { IconType } from "react-icons";
+import ListingCategory from "@/app/components/listings/ListingCategory";
 import Avatar from "@/app/components/Avatar";
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
-import { IconType } from "react-icons";
-import ListingCategory from "@/app/components/listings/ListingCategory";
-import dynamic from "next/dynamic";
 
 // Workaround for map component not being SSR compatible
 const Map = dynamic(() => import("../Map"), {

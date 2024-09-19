@@ -1,7 +1,7 @@
 import EmptyState from "../components/navbar/EmptyState";
-import getCurrentUser from "../actions/getCurrentUser";
 import PropertiesClient from "./PropertiesClient";
 import { getListings } from "../actions/getListings";
+import getCurrentUser from "../actions/getCurrentUser";
 
 const PropertiesPage = async () => {
   const currentUser = await getCurrentUser();

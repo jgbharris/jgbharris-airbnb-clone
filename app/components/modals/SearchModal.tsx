@@ -3,15 +3,15 @@
 import { useCallback, useMemo, useState } from "react";
 import { Range } from "react-date-range";
 import { useRouter, useSearchParams } from "next/navigation";
-import useSearchModal from "@/app/hooks/useSearchModal";
-import Modal from "./Modal";
 import dynamic from "next/dynamic";
-import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect";
 import qs from "query-string";
 import { formatISO } from "date-fns";
+import Modal from "./Modal";
 import Heading from "../Heading";
 import Calendar from "../inputs/Calendar";
 import Counter from "../inputs/Counter";
+import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect";
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 enum STEPS {
   LOCATION = 0,
