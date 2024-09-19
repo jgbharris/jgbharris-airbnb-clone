@@ -12,7 +12,7 @@ import { Suspense } from "react";
 
 const font = Nunito({ subsets: ["latin"] });
 
-export const dynamic = "auto";
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title:
