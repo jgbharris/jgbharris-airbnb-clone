@@ -12,6 +12,8 @@ import { Suspense } from "react";
 
 const font = Nunito({ subsets: ["latin"] });
 
+export const dynamic = "auto";
+
 export const metadata: Metadata = {
   title:
     "Airbnb: Vacation Rentals, Cabins, Beach Houses, Unique Homes & Experiences",
